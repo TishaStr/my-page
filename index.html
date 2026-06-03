@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>Анастасия Горькая | Голос и речь</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,8 +14,8 @@
         }
 
         body {
-            font-family: 'Georgia', 'Times New Roman', 'Segoe UI', serif;
-            background: radial-gradient(ellipse at center, #1e1a1f 0%, #0d0a0e 100%);
+            font-family: 'Montserrat', 'Segoe UI', sans-serif;
+            background: linear-gradient(160deg, #2d1b3d 0%, #1a1025 50%, #0f0914 100%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,34 +27,36 @@
         .card {
             max-width: 480px;
             width: 100%;
-            background: linear-gradient(180deg, #fdf8f0 0%, #f5ede0 40%, #ede1d0 100%);
-            border-radius: 32px;
-            box-shadow: 0 40px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 215, 150, 0.3);
+            background: linear-gradient(180deg, #1e1330 0%, #241835 40%, #1a1128 100%);
+            border-radius: 36px;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
             overflow: hidden;
-            padding: 36px 22px 30px;
+            padding: 38px 22px 32px;
             position: relative;
         }
 
+        /* Яркое пятно — терракотовый акцент */
         .card::before {
             content: "";
             position: absolute;
-            top: -60px;
-            right: -60px;
-            width: 180px;
-            height: 180px;
-            background: radial-gradient(circle, rgba(180, 140, 100, 0.15) 0%, transparent 70%);
+            top: -40px;
+            left: -40px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(210, 90, 60, 0.25) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
         }
 
+        /* Второй акцент — фиолетовый */
         .card::after {
             content: "";
             position: absolute;
-            bottom: -40px;
-            left: -40px;
-            width: 160px;
-            height: 160px;
-            background: radial-gradient(circle, rgba(140, 100, 70, 0.1) 0%, transparent 70%);
+            bottom: -30px;
+            right: -50px;
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, rgba(130, 80, 180, 0.2) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
         }
@@ -63,7 +66,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
             position: relative;
             z-index: 2;
         }
@@ -73,12 +76,10 @@
             height: 130px;
             border-radius: 50%;
             margin-bottom: 18px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 0 5px #f5ede0, 0 0 0 7px #c9a87c;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 0 5px #1e1330, 0 0 0 8px #d25a3c;
             overflow: hidden;
-            background: #b8946e;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: #d25a3c;
+            transition: transform 0.3s ease;
         }
 
         .avatar img {
@@ -89,73 +90,70 @@
         }
 
         h1 {
-            font-size: 2.3rem;
-            font-weight: 400;
-            color: #3d2e1f;
-            letter-spacing: 1px;
-            margin-bottom: 4px;
-            font-family: 'Georgia', 'Times New Roman', serif;
-            text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
         }
 
         .tagline {
-            font-size: 0.9rem;
-            font-weight: 400;
-            color: #6b5640;
-            background: rgba(255, 255, 255, 0.5);
-            padding: 8px 22px;
-            border-radius: 30px;
-            margin-top: 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: rgba(210, 90, 60, 0.9);
+            padding: 9px 24px;
+            border-radius: 40px;
+            margin-top: 12px;
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            letter-spacing: 0.4px;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(180, 140, 100, 0.3);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 6px 20px rgba(210, 90, 60, 0.35);
         }
 
         .tagline i {
-            color: #b8946e;
-            font-size: 0.9rem;
+            color: #ffffff;
+            font-size: 0.85rem;
         }
 
         .section-title {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-weight: 400;
-            font-size: 1.2rem;
-            color: #3d2e1f;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #ffffff;
             margin: 28px 0 14px;
-            letter-spacing: 0.5px;
-            font-family: 'Georgia', 'Times New Roman', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             position: relative;
             z-index: 2;
         }
 
         .section-title i {
-            font-size: 1.3rem;
-            color: #b8946e;
-            background: rgba(255, 255, 255, 0.4);
-            padding: 7px;
-            border-radius: 12px;
-            backdrop-filter: blur(4px);
+            font-size: 1.2rem;
+            color: #d25a3c;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 8px;
+            border-radius: 14px;
         }
 
         .quote-block {
-            background: rgba(255, 255, 255, 0.55);
-            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.04);
             border-radius: 20px;
             padding: 18px 20px;
             margin: 8px 0 18px;
-            font-style: italic;
-            color: #4a3726;
-            line-height: 1.7;
-            font-size: 0.95rem;
-            border-left: 4px solid #c9a87c;
+            color: #d4c5e0;
+            line-height: 1.8;
+            font-size: 0.9rem;
+            border-left: 4px solid #d25a3c;
             position: relative;
             z-index: 2;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            font-weight: 400;
+            letter-spacing: 0.2px;
         }
 
         .services-grid {
@@ -168,30 +166,37 @@
         }
 
         .service-badge {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(8px);
-            border: 1px solid #d6c3a8;
-            padding: 12px 16px;
-            border-radius: 30px;
-            font-weight: 400;
-            font-size: 0.9rem;
-            color: #3d2e1f;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 13px 16px;
+            border-radius: 34px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: #e8dff0;
             display: flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
-            transition: all 0.2s;
+            transition: all 0.25s ease;
             flex: 1 1 auto;
-            font-family: 'Georgia', 'Times New Roman', serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(4px);
+        }
+
+        .service-badge:hover {
+            background: rgba(210, 90, 60, 0.2);
+            border-color: rgba(210, 90, 60, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(210, 90, 60, 0.2);
         }
 
         .service-badge i {
-            color: #b8946e;
+            color: #d25a3c;
             font-size: 1rem;
         }
 
         .contact-box {
-            background: rgba(60, 45, 30, 0.08);
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 24px;
             padding: 18px 20px;
             margin: 28px 0 14px;
@@ -200,8 +205,7 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 14px;
-            backdrop-filter: blur(6px);
-            border: 1px solid rgba(180, 140, 100, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             position: relative;
             z-index: 2;
         }
@@ -213,47 +217,69 @@
         }
 
         .contact-links a {
-            color: #4a3726;
+            color: #ffffff;
             transition: all 0.2s;
             text-decoration: none;
             display: inline-flex;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 10px;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
         }
 
         .contact-links a:hover {
-            color: #b8946e;
+            background: #d25a3c;
+            color: #ffffff;
             transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(210, 90, 60, 0.4);
         }
 
         .qr-hint {
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.6);
-            padding: 8px 18px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px 18px;
             border-radius: 30px;
-            font-size: 0.85rem;
-            color: #3d2e1f;
-            backdrop-filter: blur(4px);
-            font-family: 'Georgia', serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #d4c5e0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .qr-hint i {
+            color: #d25a3c;
         }
 
         .footer-note {
             text-align: center;
-            font-size: 0.75rem;
-            color: #8b7355;
-            margin-top: 12px;
+            font-size: 0.7rem;
+            color: #9a85b0;
+            margin-top: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 8px;
             position: relative;
             z-index: 2;
-            font-family: 'Georgia', serif;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
             flex-wrap: wrap;
         }
 
+        .footer-note i {
+            color: #d25a3c;
+            font-size: 0.7rem;
+        }
+
         hr {
-            border: 0.3px solid rgba(180, 140, 100, 0.25);
+            border: 0.5px solid rgba(255, 255, 255, 0.06);
             margin: 8px 0;
             position: relative;
             z-index: 2;
@@ -261,14 +287,14 @@
 
         @media (max-width: 400px) {
             .card {
-                padding: 28px 16px 24px;
+                padding: 30px 16px 26px;
             }
             h1 {
-                font-size: 1.9rem;
+                font-size: 1.8rem;
             }
             .service-badge {
-                padding: 10px 12px;
-                font-size: 0.8rem;
+                padding: 10px 14px;
+                font-size: 0.7rem;
             }
             .avatar {
                 width: 110px;
@@ -287,21 +313,21 @@
             </div>
             <h1>Анастасия Горькая</h1>
             <div class="tagline">
-                <i class="fas fa-feather-alt"></i> Голос · Речь · Актёрское мастерство
+                <i class="fas fa-bolt"></i> Голос · Речь · Мастерство
             </div>
         </div>
 
         <!-- О голосе -->
         <div class="section-title">
-            <i class="fas fa-quote-right"></i> Что такое голос?
+            <i class="fas fa-fire"></i> Что такое голос?
         </div>
         <div class="quote-block">
-            Голос — это не просто звук. Это дыхание, характер, энергия. Он складывается из тембра, интонации, ритма и тишины между словами. В ораторском искусстве голос становится инструментом убеждения — он захватывает внимание, вызывает доверие и остаётся в памяти.
+            Голос — это энергия, которая пробивает стены. Это тембр, ритм, дыхание и пауза, которая бьёт сильнее слов. В ораторском искусстве голос становится оружием — он захватывает, убеждает и не оставляет равнодушным.
         </div>
 
         <!-- Услуги -->
         <div class="section-title">
-            <i class="fas fa-hand-sparkles"></i> С чем я работаю
+            <i class="fas fa-star"></i> С чем я работаю
         </div>
         <div class="services-grid">
             <div class="service-badge">
@@ -319,13 +345,13 @@
         </div>
         <div class="services-grid" style="margin-top: 4px;">
             <div class="service-badge">
-                <i class="fas fa-lungs"></i> Дыхательные практики
+                <i class="fas fa-wind"></i> Дыхательные практики
             </div>
             <div class="service-badge">
-                <i class="fas fa-user-tie"></i> Публичные выступления
+                <i class="fas fa-users"></i> Публичные выступления
             </div>
             <div class="service-badge">
-                <i class="fas fa-smile"></i> Раскрепощение
+                <i class="fas fa-fist-raised"></i> Раскрепощение
             </div>
         </div>
 
@@ -345,10 +371,10 @@
         <hr>
         <div class="footer-note">
             <i class="fas fa-map-pin"></i>
-            <span>Занятия онлайн и очно</span>
-            <span style="margin:0 8px;">•</span>
+            <span>Онлайн и очно</span>
+            <span>•</span>
             <i class="fas fa-calendar-check"></i>
-            <span>Открыта запись</span>
+            <span>Запись открыта</span>
         </div>
     </div>
 </body>
