@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Алексей Романов | Услуги и навыки</title>
+  <!-- Подключение Font Awesome для иконок -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+      background: linear-gradient(145deg, #f8fafc 0%, #eef2f5 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      margin: 0;
+    }
+
+    /* Основная карточка — эффект стекла и мягкой тени */
+    .card {
+      max-width: 500px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      background: #ffffff;
+      border-radius: 40px;
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.08), 0 10px 25px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      padding: 30px 24px 35px;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    /* Шапка профиля */
+    .profile-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      box-shadow: 0 15px 25px rgba(15, 23, 42, 0.2);
+      border: 4px solid #ffffff;
+    }
+
+    .avatar i {
+      font-size: 3.8rem;
+      color: #facc15;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 6px 20px;
+      border-radius: 30px;
+      margin-top: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tagline i {
+      color: #2563eb;
+      font-size: 0.9rem;
+    }
+
+    /* Секция "Что я предлагаю" */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 650;
+      font-size: 1.25rem;
+      color: #0f172a;
+      margin: 28px 0 16px 0;
+      letter-spacing: -0.3px;
+    }
+
+    .section-title i {
+      font-size: 1.4rem;
+      color: #2563eb;
+      background: #eff6ff;
+      padding: 6px;
+      border-radius: 12px;
+    }
+
+    .services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .service-badge {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 12px 18px;
+      border-radius: 30px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+      transition: all 0.2s;
+      flex: 1 1 auto;
+      background: #f9fafb;
+    }
+
+    .service-badge i {
+      color: #2563eb;
+      font-size: 1.1rem;
+    }
+
+    /* Навыки (скиллы) */
+    .skills-container {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin: 18px 0 24px;
+    }
+
+    .skill-item {
+      width: 100%;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #334155;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      background: #e2e8f0;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.04);
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb, #38bdf8);
+      border-radius: 20px;
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+
+    /* Портфолио / примеры */
+    .portfolio-preview {
+      display: flex;
+      gap: 14px;
+      margin: 20px 0 10px;
+      flex-wrap: wrap;
+    }
+
+    .portfolio-item {
+      background: #f1f5f9;
+      border-radius: 20px;
+      padding: 16px 12px;
+      flex: 1 1 120px;
+      text-align: center;
+      font-weight: 500;
+      color: #1e293b;
+      border: 1px solid #e9eef3;
+      transition: transform 0.2s;
+      background: white;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.03);
+    }
+
+    .portfolio-item i {
+      font-size: 1.7rem;
+      color: #2563eb;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    /* Контакты и QR-подсказка */
+    .contact-box {
+      background: #f8fafc;
+      border-radius: 28px;
+      padding: 18px 20px;
+      margin: 25px 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 16px;
+      font-size: 1.6rem;
+    }
+
+    .contact-links a {
+      color: #1e293b;
+      transition: color 0.2s, transform 0.2s;
+      display: inline-flex;
+    }
+
+    .contact-links a:hover {
+      color: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    .qr-hint {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #0f172a;
+      border: 1px dashed #94a3b8;
+    }
+
+    .qr-hint i {
+      font-size: 1.3rem;
+      color: #0f172a;
+    }
+
+    hr {
+      border: 0.5px solid #e2e8f0;
+      margin: 16px 0 8px;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    @media (max-width: 400px) {
+      .card {
+        padding: 24px 18px 28px;
+      }
+      .service-badge {
+        padding: 10px 14px;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    
+    <!-- Профиль -->
+    <div class="profile-header">
+      <div class="avatar">
+        <i class="fas fa-user-astronaut"></i>
+      </div>
+      <h1>Алексей Романов</h1>
+      <div class="tagline">
+        <i class="fas fa-bolt"></i> Веб-дизайнер & Разработчик
+      </div>
+    </div>
+
+    <!-- Услуги -->
+    <div class="section-title">
+      <i class="fas fa-hand-holding-heart"></i> Что я предлагаю
+    </div>
+    <div class="services-grid">
+      <div class="service-badge">
+        <i class="fas fa-laptop-code"></i> Лендинги
+      </div>
+      <div class="service-badge">
+        <i class="fas fa-mobile-alt"></i> Адаптивная вёрстка
+      </div>
+      <div class="service-badge">
+        <i class="fas fa-paint-brush"></i> UI/UX дизайн
+      </div>
+      <div class="service-badge">
+        <i class="fas fa-chart-line"></i> SEO-оптимизация
+      </div>
+    </div>
+
+    <!-- Навыки (прогресс-бары) -->
+    <div class="section-title">
+      <i class="fas fa-code"></i> Ключевые навыки
+    </div>
+    <div class="skills-container">
+      <div class="skill-item">
+        <div class="skill-info"><span>HTML5 / CSS3</span> <span>95%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 95%;"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-info"><span>JavaScript (React)</span> <span>88%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 88%;"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-info"><span>Figma / UI Design</span> <span>90%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-info"><span>Адаптивная верстка</span> <span>92%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 92%;"></div></div>
+      </div>
+    </div>
+
+    <!-- Мини-портфолио -->
+    <div class="section-title">
+      <i class="fas fa-folder-open"></i> Последние проекты
+    </div>
+    <div class="portfolio-preview">
+      <div class="portfolio-item">
+        <i class="fas fa-store"></i>
+        <span>Интернет-магазин</span>
+      </div>
+      <div class="portfolio-item">
+        <i class="fas fa-graduation-cap"></i>
+        <span>Образовательная платформа</span>
+      </div>
+      <div class="portfolio-item">
+        <i class="fas fa-utensils"></i>
+        <span>Ресторанный блог</span>
+      </div>
+    </div>
+
+    <!-- Контакты + упоминание QR -->
+    <div class="contact-box">
+      <div class="contact-links">
+        <a href="#" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="#" aria-label="Портфолио"><i class="fas fa-globe"></i></a>
+      </div>
+      <div class="qr-hint">
+        <i class="fas fa-qrcode"></i>
+        <span>Сканируй QR</span>
+      </div>
+    </div>
+
+    <hr>
+    <div class="footer-note">
+      <i class="fas fa-map-pin"></i> 
+      <span>Москва · Удалённо</span>
+      <span style="margin:0 5px;">•</span>
+      <i class="fas fa-clock"></i> 
+      <span>Открыт для проектов</span>
+    </div>
+    <div style="text-align: center; font-size: 0.75rem; color: #94a3b8; margin-top: 10px;">
+      © 2025 Алексей Романов — персональная страница
+    </div>
+  </div>
+</body>
+</html>
