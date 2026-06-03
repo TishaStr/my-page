@@ -1,391 +1,352 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <title>Алексей Романов | Услуги и навыки</title>
-  <!-- Подключение Font Awesome для иконок -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Анастасия Горькая | Голос и речь</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
-      background: linear-gradient(145deg, #f8fafc 0%, #eef2f5 100%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-      margin: 0;
-    }
+        body {
+            font-family: 'Georgia', 'Times New Roman', 'Segoe UI', serif;
+            background: radial-gradient(ellipse at center, #1e1a1f 0%, #0d0a0e 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 16px;
+            margin: 0;
+        }
 
-    /* Основная карточка — эффект стекла и мягкой тени */
-    .card {
-      max-width: 500px;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
-      background: #ffffff;
-      border-radius: 40px;
-      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.08), 0 10px 25px rgba(0, 0, 0, 0.05);
-      overflow: hidden;
-      padding: 30px 24px 35px;
-      transition: all 0.2s ease;
-      border: 1px solid rgba(255, 255, 255, 0.6);
-    }
+        .card {
+            max-width: 480px;
+            width: 100%;
+            background: linear-gradient(180deg, #fdf8f0 0%, #f5ede0 40%, #ede1d0 100%);
+            border-radius: 32px;
+            box-shadow: 0 40px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 215, 150, 0.3);
+            overflow: hidden;
+            padding: 36px 22px 30px;
+            position: relative;
+        }
 
-    /* Шапка профиля */
-    .profile-header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      margin-bottom: 28px;
-    }
+        .card::before {
+            content: "";
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(180, 140, 100, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
 
-    .avatar {
-      width: 110px;
-      height: 110px;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 18px;
-      box-shadow: 0 15px 25px rgba(15, 23, 42, 0.2);
-      border: 4px solid #ffffff;
-    }
+        .card::after {
+            content: "";
+            position: absolute;
+            bottom: -40px;
+            left: -40px;
+            width: 160px;
+            height: 160px;
+            background: radial-gradient(circle, rgba(140, 100, 70, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
 
-    .avatar i {
-      font-size: 3.8rem;
-      color: #facc15;
-      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
-    }
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
 
-    h1 {
-      font-size: 2.1rem;
-      font-weight: 700;
-      color: #0f172a;
-      letter-spacing: -0.5px;
-      margin-bottom: 6px;
-    }
+        .avatar {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            margin-bottom: 18px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 0 5px #f5ede0, 0 0 0 7px #c9a87c;
+            overflow: hidden;
+            background: #b8946e;
+        }
 
-    .tagline {
-      font-size: 1rem;
-      font-weight: 500;
-      color: #475569;
-      background: #f1f5f9;
-      padding: 6px 20px;
-      border-radius: 30px;
-      margin-top: 8px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
-    .tagline i {
-      color: #2563eb;
-      font-size: 0.9rem;
-    }
+        h1 {
+            font-size: 2.3rem;
+            font-weight: 400;
+            color: #3d2e1f;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+        }
 
-    /* Секция "Что я предлагаю" */
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 650;
-      font-size: 1.25rem;
-      color: #0f172a;
-      margin: 28px 0 16px 0;
-      letter-spacing: -0.3px;
-    }
+        .tagline {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #6b5640;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 8px 22px;
+            border-radius: 30px;
+            margin-top: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 0.4px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(180, 140, 100, 0.3);
+        }
 
-    .section-title i {
-      font-size: 1.4rem;
-      color: #2563eb;
-      background: #eff6ff;
-      padding: 6px;
-      border-radius: 12px;
-    }
+        .tagline i {
+            color: #b8946e;
+            font-size: 0.9rem;
+        }
 
-    .services-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 400;
+            font-size: 1.2rem;
+            color: #3d2e1f;
+            margin: 28px 0 14px;
+            letter-spacing: 0.5px;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            position: relative;
+            z-index: 2;
+        }
 
-    .service-badge {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      padding: 12px 18px;
-      border-radius: 30px;
-      font-weight: 500;
-      font-size: 0.95rem;
-      color: #1e293b;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-      transition: all 0.2s;
-      flex: 1 1 auto;
-      background: #f9fafb;
-    }
+        .section-title i {
+            font-size: 1.3rem;
+            color: #b8946e;
+            background: rgba(255, 255, 255, 0.4);
+            padding: 7px;
+            border-radius: 12px;
+            backdrop-filter: blur(4px);
+        }
 
-    .service-badge i {
-      color: #2563eb;
-      font-size: 1.1rem;
-    }
+        .quote-block {
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            padding: 18px 20px;
+            margin: 8px 0 18px;
+            font-style: italic;
+            color: #4a3726;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            border-left: 4px solid #c9a87c;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
 
-    /* Навыки (скиллы) */
-    .skills-container {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      margin: 18px 0 24px;
-    }
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 2;
+        }
 
-    .skill-item {
-      width: 100%;
-    }
+        .service-badge {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid #d6c3a8;
+            padding: 12px 16px;
+            border-radius: 30px;
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: #3d2e1f;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+            transition: all 0.2s;
+            flex: 1 1 auto;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
 
-    .skill-info {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 6px;
-      font-weight: 500;
-      font-size: 0.9rem;
-      color: #334155;
-    }
+        .service-badge i {
+            color: #b8946e;
+            font-size: 1rem;
+        }
 
-    .progress-bar {
-      width: 100%;
-      height: 10px;
-      background: #e2e8f0;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: inset 0 2px 4px rgba(0,0,0,0.04);
-    }
+        .contact-box {
+            background: rgba(60, 45, 30, 0.08);
+            border-radius: 24px;
+            padding: 18px 20px;
+            margin: 28px 0 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 14px;
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(180, 140, 100, 0.3);
+            position: relative;
+            z-index: 2;
+        }
 
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #2563eb, #38bdf8);
-      border-radius: 20px;
-      width: 0%;
-      transition: width 0.4s ease;
-    }
+        .contact-links {
+            display: flex;
+            gap: 18px;
+            font-size: 1.5rem;
+        }
 
-    /* Портфолио / примеры */
-    .portfolio-preview {
-      display: flex;
-      gap: 14px;
-      margin: 20px 0 10px;
-      flex-wrap: wrap;
-    }
+        .contact-links a {
+            color: #4a3726;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+        }
 
-    .portfolio-item {
-      background: #f1f5f9;
-      border-radius: 20px;
-      padding: 16px 12px;
-      flex: 1 1 120px;
-      text-align: center;
-      font-weight: 500;
-      color: #1e293b;
-      border: 1px solid #e9eef3;
-      transition: transform 0.2s;
-      background: white;
-      box-shadow: 0 5px 12px rgba(0,0,0,0.03);
-    }
+        .contact-links a:hover {
+            color: #b8946e;
+            transform: translateY(-2px);
+        }
 
-    .portfolio-item i {
-      font-size: 1.7rem;
-      color: #2563eb;
-      margin-bottom: 8px;
-      display: block;
-    }
+        .qr-hint {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #3d2e1f;
+            backdrop-filter: blur(4px);
+            font-family: 'Georgia', serif;
+        }
 
-    /* Контакты и QR-подсказка */
-    .contact-box {
-      background: #f8fafc;
-      border-radius: 28px;
-      padding: 18px 20px;
-      margin: 25px 0 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 15px;
-      border: 1px solid #e2e8f0;
-    }
+        .footer-note {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #8b7355;
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            position: relative;
+            z-index: 2;
+            font-family: 'Georgia', serif;
+            flex-wrap: wrap;
+        }
 
-    .contact-links {
-      display: flex;
-      gap: 16px;
-      font-size: 1.6rem;
-    }
+        hr {
+            border: 0.3px solid rgba(180, 140, 100, 0.25);
+            margin: 8px 0;
+            position: relative;
+            z-index: 2;
+        }
 
-    .contact-links a {
-      color: #1e293b;
-      transition: color 0.2s, transform 0.2s;
-      display: inline-flex;
-    }
-
-    .contact-links a:hover {
-      color: #2563eb;
-      transform: translateY(-2px);
-    }
-
-    .qr-hint {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: #ffffff;
-      padding: 8px 18px;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #0f172a;
-      border: 1px dashed #94a3b8;
-    }
-
-    .qr-hint i {
-      font-size: 1.3rem;
-      color: #0f172a;
-    }
-
-    hr {
-      border: 0.5px solid #e2e8f0;
-      margin: 16px 0 8px;
-    }
-
-    .footer-note {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #64748b;
-      margin-top: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-
-    @media (max-width: 400px) {
-      .card {
-        padding: 24px 18px 28px;
-      }
-      .service-badge {
-        padding: 10px 14px;
-        font-size: 0.85rem;
-      }
-    }
-  </style>
+        @media (max-width: 400px) {
+            .card {
+                padding: 28px 16px 24px;
+            }
+            h1 {
+                font-size: 1.9rem;
+            }
+            .service-badge {
+                padding: 10px 12px;
+                font-size: 0.8rem;
+            }
+            .avatar {
+                width: 110px;
+                height: 110px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="card">
-    
-    <!-- Профиль -->
-    <div class="profile-header">
-      <div class="avatar">
-        <i class="fas fa-user-astronaut"></i>
-      </div>
-      <h1>Алексей Романов</h1>
-      <div class="tagline">
-        <i class="fas fa-bolt"></i> Веб-дизайнер & Разработчик
-      </div>
-    </div>
+    <div class="card">
 
-    <!-- Услуги -->
-    <div class="section-title">
-      <i class="fas fa-hand-holding-heart"></i> Что я предлагаю
-    </div>
-    <div class="services-grid">
-      <div class="service-badge">
-        <i class="fas fa-laptop-code"></i> Лендинги
-      </div>
-      <div class="service-badge">
-        <i class="fas fa-mobile-alt"></i> Адаптивная вёрстка
-      </div>
-      <div class="service-badge">
-        <i class="fas fa-paint-brush"></i> UI/UX дизайн
-      </div>
-      <div class="service-badge">
-        <i class="fas fa-chart-line"></i> SEO-оптимизация
-      </div>
-    </div>
+        <!-- Профиль с фото -->
+        <div class="profile-header">
+            <div class="avatar">
+                <img src="https://i.ibb.co/0yQm5dr/photo.jpg" alt="Анастасия Горькая" />
+            </div>
+            <h1>Анастасия Горькая</h1>
+            <div class="tagline">
+                <i class="fas fa-feather-alt"></i> Голос · Речь · Актёрское мастерство
+            </div>
+        </div>
 
-    <!-- Навыки (прогресс-бары) -->
-    <div class="section-title">
-      <i class="fas fa-code"></i> Ключевые навыки
-    </div>
-    <div class="skills-container">
-      <div class="skill-item">
-        <div class="skill-info"><span>HTML5 / CSS3</span> <span>95%</span></div>
-        <div class="progress-bar"><div class="progress-fill" style="width: 95%;"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-info"><span>JavaScript (React)</span> <span>88%</span></div>
-        <div class="progress-bar"><div class="progress-fill" style="width: 88%;"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-info"><span>Figma / UI Design</span> <span>90%</span></div>
-        <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-info"><span>Адаптивная верстка</span> <span>92%</span></div>
-        <div class="progress-bar"><div class="progress-fill" style="width: 92%;"></div></div>
-      </div>
-    </div>
+        <!-- О голосе -->
+        <div class="section-title">
+            <i class="fas fa-quote-right"></i> Что такое голос?
+        </div>
+        <div class="quote-block">
+            Голос — это не просто звук. Это дыхание, характер, энергия. Он складывается из тембра, интонации, ритма и тишины между словами. В ораторском искусстве голос становится инструментом убеждения — он захватывает внимание, вызывает доверие и остаётся в памяти.
+        </div>
 
-    <!-- Мини-портфолио -->
-    <div class="section-title">
-      <i class="fas fa-folder-open"></i> Последние проекты
-    </div>
-    <div class="portfolio-preview">
-      <div class="portfolio-item">
-        <i class="fas fa-store"></i>
-        <span>Интернет-магазин</span>
-      </div>
-      <div class="portfolio-item">
-        <i class="fas fa-graduation-cap"></i>
-        <span>Образовательная платформа</span>
-      </div>
-      <div class="portfolio-item">
-        <i class="fas fa-utensils"></i>
-        <span>Ресторанный блог</span>
-      </div>
-    </div>
+        <!-- Услуги -->
+        <div class="section-title">
+            <i class="fas fa-hand-sparkles"></i> С чем я работаю
+        </div>
+        <div class="services-grid">
+            <div class="service-badge">
+                <i class="fas fa-microphone-alt"></i> Постановка голоса
+            </div>
+            <div class="service-badge">
+                <i class="fas fa-comment-dots"></i> Техника речи
+            </div>
+            <div class="service-badge">
+                <i class="fas fa-theater-masks"></i> Актёрское мастерство
+            </div>
+            <div class="service-badge">
+                <i class="fas fa-bullhorn"></i> Ораторское искусство
+            </div>
+        </div>
+        <div class="services-grid" style="margin-top: 4px;">
+            <div class="service-badge">
+                <i class="fas fa-lungs"></i> Дыхательные практики
+            </div>
+            <div class="service-badge">
+                <i class="fas fa-user-tie"></i> Публичные выступления
+            </div>
+            <div class="service-badge">
+                <i class="fas fa-smile"></i> Раскрепощение
+            </div>
+        </div>
 
-    <!-- Контакты + упоминание QR -->
-    <div class="contact-box">
-      <div class="contact-links">
-        <a href="#" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        <a href="#" aria-label="Портфолио"><i class="fas fa-globe"></i></a>
-      </div>
-      <div class="qr-hint">
-        <i class="fas fa-qrcode"></i>
-        <span>Сканируй QR</span>
-      </div>
-    </div>
+        <!-- Контакты -->
+        <div class="contact-box">
+            <div class="contact-links">
+                <a href="https://t.me/stasyaprovoice63" target="_blank" aria-label="Telegram">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+            </div>
+            <div class="qr-hint">
+                <i class="fas fa-qrcode"></i>
+                <span>Сканируйте QR</span>
+            </div>
+        </div>
 
-    <hr>
-    <div class="footer-note">
-      <i class="fas fa-map-pin"></i> 
-      <span>Москва · Удалённо</span>
-      <span style="margin:0 5px;">•</span>
-      <i class="fas fa-clock"></i> 
-      <span>Открыт для проектов</span>
+        <hr>
+        <div class="footer-note">
+            <i class="fas fa-map-pin"></i>
+            <span>Занятия онлайн и очно</span>
+            <span style="margin:0 8px;">•</span>
+            <i class="fas fa-calendar-check"></i>
+            <span>Открыта запись</span>
+        </div>
     </div>
-    <div style="text-align: center; font-size: 0.75rem; color: #94a3b8; margin-top: 10px;">
-      © 2025 Алексей Романов — персональная страница
-    </div>
-  </div>
 </body>
 </html>
